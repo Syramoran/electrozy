@@ -1,0 +1,6 @@
+<!doctype html><html><body style="margin:0;background:#000">
+<video id="v" src="t.mp4" style="width:100vw;height:100vh;object-fit:contain" muted preload="auto"></video>
+<script>
+const v = document.getElementById('v')
+window.seek = (t) => new Promise((r) => { v.onseeked = () => r([v.videoWidth, v.videoHeight, v.duration]); v.currentTime = t })
+</script></body></html>
